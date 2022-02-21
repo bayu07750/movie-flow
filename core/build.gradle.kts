@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.*
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -13,10 +16,13 @@ android {
         minSdk = 21
         targetSdk = 32
 
-//        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-//        consumerProguardFiles = "consumer-rules.pro"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "TMDB_API_KEY", getApiKey())
+        val prop = Properties().apply {
+            load(FileInputStream(File(rootProject.rootDir, "local.properties")))
+        }
+
+        buildConfigField("String", "TMDB_API_KEY", prop.getProperty("TMDB_API_KEY"))
         buildConfigField("String", "TMDB_BASE_URL", "\"https://api.themoviedb.org/3/\"")
     }
 
@@ -73,26 +79,12 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
 
     // navigation
-    implementation("androidx.navigation:navigation-fragment-ktx:2.5.0-alpha01")
-    implementation("androidx.navigation:navigation-ui-ktx:2.5.0-alpha01")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.5.0-alpha02")
+    implementation("androidx.navigation:navigation-ui-ktx:2.5.0-alpha02")
 
     // coil
     implementation("io.coil-kt:coil:1.4.0")
 
     // datastore
     implementation("androidx.datastore:datastore-preferences:1.0.0")
-}
-
-fun getApiKey(): String {
-    val items = HashMap<String, String>()
-
-    val fl = rootProject.file("app/local.properties")
-
-    (fl.exists())?.let {
-        fl.forEachLine {
-            items[it.split("=")[0]] = it.split("=")[1]
-        }
-    }
-
-    return items["TMDB_API_KEY"]!!
 }
