@@ -7,6 +7,6 @@ plugins {
     id("dagger.hilt.android.plugin") version "2.39.1" apply false
 }
 
-tasks.register("clean") {
+tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }
