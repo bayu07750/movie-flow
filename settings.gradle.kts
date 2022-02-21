@@ -7,8 +7,8 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
             // Use `resolutionStrategy` to define the Hilt plugin and its coordinate
-            if (requested.id.id == 'dagger.hilt.android.plugin') {
-                useModule('com.google.dagger:hilt-android-gradle-plugin:2.38.1')
+            if (requested.id.id == "dagger.hilt.android.plugin") {
+                useModule("com.google.dagger:hilt-android-gradle-plugin:2.38.1")
             }
         }
     }
@@ -21,5 +21,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "MovieFlow"
-include ':app'
-include ':core'
+include(":app")
+include(":core")
