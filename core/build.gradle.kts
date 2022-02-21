@@ -17,6 +17,7 @@ android {
         targetSdk = 32
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFile("consumer-rules.pro")
 
         val prop = Properties().apply {
             load(FileInputStream(File(rootProject.rootDir, "local.properties")))
@@ -28,6 +29,13 @@ android {
 
     buildTypes {
         getByName("release") {
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro",
+            )
+        }
+        getByName("debug") {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
