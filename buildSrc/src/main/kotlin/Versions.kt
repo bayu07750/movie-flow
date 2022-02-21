@@ -1,0 +1,23 @@
+object Versions {
+
+    const val kotlin = "1.6.10"
+    const val androidPlugin = "7.1.1"
+    const val navigation = "2.5.0-alpha02"
+    const val daggerHilt = "2.39.1"
+    const val lifecycle = "2.4.1"
+    const val coreKtx = "1.7.0"
+    const val appCompat = "1.4.1"
+    const val material = "1.5.0"
+    const val constraintLayout = "2.1.3"
+    const val legacySupport = "1.0.0"
+    const val junit = "4.13.2"
+    const val junitExt = "1.1.3"
+    const val espressoCore = "3.4.0"
+    const val coroutines = "1.6.0"
+    const val coil = "1.4.0"
+    const val dataStore = "1.0.0"
+    const val retrofit = "2.9.0"
+    const val gson = "2.9.0"
+    const val okhttp = "5.0.0-alpha.2"
+    const val room = "2.4.1"
+}
