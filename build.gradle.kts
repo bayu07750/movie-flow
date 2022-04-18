@@ -4,7 +4,7 @@ plugins {
     id("com.android.library") version Versions.androidPlugin apply false
     id("org.jetbrains.kotlin.android") version Versions.kotlin apply false
     id("androidx.navigation.safeargs.kotlin") version Versions.navigation apply false
-    id("dagger.hilt.android.plugin") version Versions.daggerHilt apply false
+    id("com.google.dagger.hilt.android") version Versions.daggerHilt apply false
 }
 
 tasks.register("clean", Delete::class) {
