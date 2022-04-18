@@ -4,6 +4,7 @@ object Deps {
         val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
         val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.gson}"
         val okhttp = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}"
+        val moshiConverter = "com.squareup.retrofit2:converter-moshi:${Versions.moshi}"
     }
 
     object Lifecycle {

@@ -1,9 +1,8 @@
 package com.bayu.movieflow.core.data.source.remote.api.response
 
-
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class GenresResponse(
-    @SerializedName("genres")
+    @field:Json(name = "genres")
     val genres: List<GenreResponse>? = null
 )

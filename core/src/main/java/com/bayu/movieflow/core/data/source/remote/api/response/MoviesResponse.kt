@@ -1,14 +1,14 @@
 package com.bayu.movieflow.core.data.source.remote.api.response
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class MoviesResponse(
-    @SerializedName("page")
+    @field:Json(name = "page")
     val page: Int? = null,
-    @SerializedName("results")
+    @field:Json(name = "results")
     val results: List<MovieResponse>? = null,
-    @SerializedName("total_pages")
+    @field:Json(name = "total_pages")
     val totalPages: Int? = null,
-    @SerializedName("total_results")
+    @field:Json(name = "total_results")
     val totalResults: Int? = null
 )

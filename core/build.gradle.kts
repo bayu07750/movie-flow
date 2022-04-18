@@ -58,8 +58,8 @@ android {
 dependencies {
     // retrofit
     implementation(Deps.Network.retrofit)
-    implementation(Deps.Network.gsonConverter)
     implementation(Deps.Network.okhttp)
+    implementation(Deps.Network.moshiConverter)
 
     // lifecycle
     api(Deps.Lifecycle.lifecycleViewModel)

@@ -18,6 +18,7 @@ object Versions {
     const val dataStore = "1.0.0"
     const val retrofit = "2.9.0"
     const val gson = "2.9.0"
+    const val moshi = "2.9.0"
     const val okhttp = "5.0.0-alpha.2"
     const val room = "2.4.1"
 }

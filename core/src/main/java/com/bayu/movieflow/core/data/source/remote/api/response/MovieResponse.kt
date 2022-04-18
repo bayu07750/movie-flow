@@ -1,35 +1,34 @@
 package com.bayu.movieflow.core.data.source.remote.api.response
 
-
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class MovieResponse(
-    @SerializedName("adult")
+    @field:Json(name = "adult")
     val adult: Boolean? = null,
-    @SerializedName("backdrop_path")
+    @field:Json(name = "backdrop_path")
     val backdropPath: String? = null,
-    @SerializedName("genre_ids")
+    @field:Json(name = "genre_ids")
     val genreIds: List<Int>? = null,
-    @SerializedName("id")
+    @field:Json(name = "id")
     val id: Int? = null,
-    @SerializedName("original_language")
+    @field:Json(name = "original_language")
     val originalLanguage: String? = null,
-    @SerializedName("original_title")
+    @field:Json(name = "original_title")
     val originalTitle: String? = null,
-    @SerializedName("overview")
+    @field:Json(name = "overview")
     val overview: String? = null,
-    @SerializedName("popularity")
+    @field:Json(name = "popularity")
     val popularity: Double? = null,
-    @SerializedName("poster_path")
+    @field:Json(name = "poster_path")
     val posterPath: String? = null,
-    @SerializedName("release_date")
+    @field:Json(name = "release_date")
     val releaseDate: String? = null,
-    @SerializedName("title")
+    @field:Json(name = "title")
     val title: String? = null,
-    @SerializedName("video")
+    @field:Json(name = "video")
     val video: Boolean? = null,
-    @SerializedName("vote_average")
+    @field:Json(name = "vote_average")
     val voteAverage: Double? = null,
-    @SerializedName("vote_count")
+    @field:Json(name = "vote_count")
     val voteCount: Int? = null
 )
