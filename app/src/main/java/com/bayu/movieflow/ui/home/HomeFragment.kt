@@ -79,9 +79,10 @@ class HomeFragment : Fragment() {
 
     private fun setupRecyclerView() {
         with(binding.recyclerView) {
-            setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
-            adapter = moviesAdapter
+            getRecyclerView().setHasFixedSize(true)
+            setLayoutManager(LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false))
+            setAdapter(moviesAdapter)
+            addVeiledItems(15)
         }
     }
 
@@ -95,9 +96,9 @@ class HomeFragment : Fragment() {
                             when (result) {
                                 is Resource.Empty -> showMessage(getString(R.string.not_found))
                                 is Resource.Error -> showMessage(result.message)
-                                is Resource.Loading -> showProgressBar()
+                                is Resource.Loading -> binding.recyclerView.veil()
                                 is Resource.Success -> {
-                                    progressBar.hide()
+                                    binding.recyclerView.unVeil()
                                     recyclerView.visible()
                                     tvMessage.hide()
                                     if (result.data.isNotEmpty())

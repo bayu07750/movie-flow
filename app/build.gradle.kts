@@ -69,4 +69,6 @@ dependencies {
 
     // datastore
     implementation(Deps.Preference.datastore)
+
+    implementation("com.github.skydoves:androidveil:1.1.2")
 }
